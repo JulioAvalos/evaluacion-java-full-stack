@@ -1,3 +1,14 @@
+
+create table oauth_access_token (
+  token_id VARCHAR(256),
+  token bytea,
+  authentication_id VARCHAR(256) PRIMARY KEY,
+  user_name VARCHAR(256),
+  client_id VARCHAR(256),
+  authentication bytea,
+  refresh_token VARCHAR(256)
+);
+
 create table oauth_refresh_token (
   token_id VARCHAR(256),
   token bytea,
@@ -7,6 +18,7 @@ create table oauth_refresh_token (
 --USUARIOS DE EJEMPLO CON CLAVE 123
 INSERT INTO usuario(id_usuario, nombre, clave, estado) values (1, 'mitocode', '$2a$10$ju20i95JTDkRa7Sua63JWOChSBc0MNFtG/6Sps2ahFFqN.HCCUMW.', '1');
 INSERT INTO usuario(id_usuario, nombre, clave, estado) values (2, 'jaime', '$2a$10$ju20i95JTDkRa7Sua63JWOChSBc0MNFtG/6Sps2ahFFqN.HCCUMW.', '1');
+INSERT INTO usuario(id_usuario, nombre, clave, estado) values (3, 'javalos', '$2a$10$pDBBaL0g/7epijof.0KYy.8sBQPqNEBhgcrRU2/PYMlUXseNdnjwa', '1');
 
 INSERT INTO Rol (id_rol, nombre, descripcion) VALUES (1, 'ADMIN', 'Administrador');
 INSERT INTO Rol (id_rol, nombre, descripcion) VALUES (2, 'USER', 'Usuario');
@@ -15,6 +27,8 @@ INSERT INTO Rol (id_rol, nombre, descripcion) VALUES (3, 'DBA', 'Admin de bd');
 INSERT INTO usuario_rol (id_usuario, id_rol) VALUES (1, 1);
 INSERT INTO usuario_rol (id_usuario, id_rol) VALUES (1, 3);
 INSERT INTO usuario_rol (id_usuario, id_rol) VALUES (2, 2);
+INSERT INTO usuario_rol (id_usuario, id_rol) VALUES (3, 1);
+INSERT INTO usuario_rol (id_usuario, id_rol) VALUES (3, 3);
 
 -- select m.* from menu_rol mr
 -- inner join usuario_rol ur on ur.id_rol = mr.id_rol
