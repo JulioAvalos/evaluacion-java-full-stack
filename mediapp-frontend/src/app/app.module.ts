@@ -31,6 +31,9 @@ import { Not403Component } from './pages/not403/not403.component';
 import { RecuperarComponent } from './pages/login/recuperar/recuperar.component';
 import { TokenComponent } from './pages/login/recuperar/token/token.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { MenuComponent } from './pages/menu/menu.component';
+import { RolComponent } from './pages/rol/rol.component';
+import { RolEdicionComponent } from './pages/rol/rol-edicion/rol-edicion.component';
 
 export function tokenGetter(){
   let tk = sessionStorage.getItem(environment.TOKEN_NAME);
@@ -57,7 +60,10 @@ export function tokenGetter(){
     LoginComponent,
     Not403Component,
     RecuperarComponent,
-    TokenComponent    
+    TokenComponent,
+    MenuComponent,
+    RolComponent,
+    RolEdicionComponent
   ],
   entryComponents: [MedicoDialogoComponent, DialogoComponentComponent],
   imports: [
@@ -73,7 +79,7 @@ export function tokenGetter(){
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        whitelistedDomains: ['TU_IP_PUBLICA o LOCALHOST'],
+        whitelistedDomains: ['TU_IP_PUBLICA o LOCALHOST', 'localhost:8080'],
         blacklistedRoutes: ['http://TU_IP_PUBLICA o LOCALHOST/login/enviarCorreo']
       }
     })

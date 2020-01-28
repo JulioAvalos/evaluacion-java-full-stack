@@ -1,4 +1,5 @@
 
+-- tablas para oauth2
 create table oauth_access_token (
   token_id VARCHAR(256),
   token bytea,
@@ -36,6 +37,7 @@ INSERT INTO usuario_rol (id_usuario, id_rol) VALUES (3, 3);
 -- inner join usuario u on u.id_usuario = ur.id_usuario
 -- where u.nombre = 'mito@gmail.com'
 
+-- ###### crear funcion directamente desde la base!! #####
 
 -- CREATE OR REPLACE FUNCTION fn_listarResumen ()
 --  RETURNS TABLE (
@@ -68,6 +70,7 @@ INSERT INTO menu(id_menu, nombre, icono, url) VALUES (6, 'Médicos', 'healing', 
 INSERT INTO menu(id_menu, nombre, icono, url) VALUES (7, 'Examenes', 'assignment', '/examen');
 INSERT INTO menu(id_menu, nombre, icono, url) VALUES (8, 'Pacientes', 'accessibility', '/paciente');
 INSERT INTO menu(id_menu, nombre, icono, url) VALUES (9, 'Reportes', 'assessment', '/reporte');
+INSERT INTO menu(id_menu, nombre, icono, url) VALUES (10, 'Rol', 'assessment', '/roles');
 
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (1, 1);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (2, 1);
@@ -78,6 +81,7 @@ INSERT INTO menu_rol (id_menu, id_rol) VALUES (6, 1);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (7, 1);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (8, 1);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (9, 1);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (10, 1);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (3, 2);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (4, 2);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (5, 2);

@@ -17,6 +17,8 @@ import { PacienteEdicionComponent } from './pages/paciente/paciente-edicion/paci
 import { PacienteComponent } from './pages/paciente/paciente.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { RolComponent } from './pages/rol/rol.component';
+import { RolEdicionComponent } from './pages/rol/rol-edicion/rol-edicion.component';
 
 
 const routes: Routes = [
@@ -49,6 +51,12 @@ const routes: Routes = [
     path: 'recuperar', component: RecuperarComponent, children: [
       { path: ':token', component: TokenComponent }
     ]
+  },
+  {
+    path: 'rol', component: RolComponent, children: [
+      { path: 'nuevo', component: RolEdicionComponent },
+      { path: 'edicion/:id', component: RolEdicionComponent }
+    ], canActivate: [GuardService]
   },
   { path: 'not-403', component: Not403Component },
   { path: '', redirectTo: 'login', pathMatch: 'full' }
