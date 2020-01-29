@@ -28,12 +28,9 @@ public class MenuServiceImpl implements IMenuService {
 
 	@Override
 	public Menu modificar(Menu menu) {
-		List<Rol> roles = new ArrayList<>();
-		if (menu != null && menu.getIdMenu() != null){
-			Optional<Menu> op = repo.findById(menu.getIdMenu());
-			Menu menuAnterior = op.orElseGet(Menu::new);
-			menu.setRoles(menuAnterior.getRoles());
-		}
+		Optional<Menu> op = repo.findById(menu.getIdMenu());
+		Menu menuAnterior = op.orElseGet(Menu::new);
+		menu.setRoles(menuAnterior.getRoles());
 		return repo.save(menu);
 	}
 

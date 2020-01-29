@@ -21,6 +21,7 @@ import { RolComponent } from './pages/rol/rol.component';
 import { RolEdicionComponent } from './pages/rol/rol-edicion/rol-edicion.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { MenuEdicionComponent } from './pages/menu/menu-edicion/menu-edicion.component';
+import { AsignarRolesUsuarioComponent } from './pages/asignar-roles-usuario/asignar-roles-usuario.component';
 
 const routes: Routes = [
   {
@@ -65,6 +66,7 @@ const routes: Routes = [
       { path: 'edicion/:id', component: MenuEdicionComponent }
     ], canActivate: [GuardService]
   },
+  { path: 'asignar-roles-usuario', component: AsignarRolesUsuarioComponent },
   { path: 'not-403', component: Not403Component },
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];

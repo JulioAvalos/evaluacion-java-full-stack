@@ -64,7 +64,7 @@ public class MenuController {
 	@PutMapping
 	public ResponseEntity<Menu> modificar(@Valid @RequestBody Menu Menu) {
 		Menu menu = service.modificar(Menu);
-][]		return new ResponseEntity<>(menu, HttpStatus.OK);
+		return new ResponseEntity<>(menu, HttpStatus.OK);
 	}
 
 	@DeleteMapping("/{id}")
