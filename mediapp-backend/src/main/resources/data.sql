@@ -70,7 +70,8 @@ INSERT INTO menu(id_menu, nombre, icono, url) VALUES (6, 'Médicos', 'healing', 
 INSERT INTO menu(id_menu, nombre, icono, url) VALUES (7, 'Examenes', 'assignment', '/examen');
 INSERT INTO menu(id_menu, nombre, icono, url) VALUES (8, 'Pacientes', 'accessibility', '/paciente');
 INSERT INTO menu(id_menu, nombre, icono, url) VALUES (9, 'Reportes', 'assessment', '/reporte');
-INSERT INTO menu(id_menu, nombre, icono, url) VALUES (10, 'Rol', 'assessment', '/roles');
+INSERT INTO menu(id_menu, nombre, icono, url) VALUES (10, 'Rol', 'vpn_key', '/rol');
+INSERT INTO menu(id_menu, nombre, icono, url) VALUES (11, 'Menu', 'group', '/menu');
 
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (1, 1);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (2, 1);
@@ -82,6 +83,7 @@ INSERT INTO menu_rol (id_menu, id_rol) VALUES (7, 1);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (8, 1);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (9, 1);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (10, 1);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (11, 1);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (3, 2);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (4, 2);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (5, 2);

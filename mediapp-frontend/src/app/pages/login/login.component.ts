@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit {
   iniciarSesion(){
     this.loginService.login(this.usuario, this.clave).subscribe(data => {
       //console.log(data);
-      debugger;
       const helper = new JwtHelperService();
       sessionStorage.setItem(environment.TOKEN_NAME, data.access_token);
 

@@ -4,7 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import com.mitocode.model.Rol;
+import com.mitocode.repo.IRolRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.mitocode.model.Menu;
@@ -24,6 +28,12 @@ public class MenuServiceImpl implements IMenuService {
 
 	@Override
 	public Menu modificar(Menu menu) {
+		List<Rol> roles = new ArrayList<>();
+		if (menu != null && menu.getIdMenu() != null){
+			Optional<Menu> op = repo.findById(menu.getIdMenu());
+			Menu menuAnterior = op.orElseGet(Menu::new);
+			menu.setRoles(menuAnterior.getRoles());
+		}
 		return repo.save(menu);
 	}
 
@@ -42,6 +52,12 @@ public class MenuServiceImpl implements IMenuService {
 	@Override
 	public List<Menu> listar() {
 		return repo.findAll();
+	}
+
+
+	@Override
+	public Page<Menu> listarPageable(Pageable pageable) {
+		return repo.findAll(pageable);
 	}
 
 	@Override

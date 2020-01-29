@@ -34,6 +34,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { MenuComponent } from './pages/menu/menu.component';
 import { RolComponent } from './pages/rol/rol.component';
 import { RolEdicionComponent } from './pages/rol/rol-edicion/rol-edicion.component';
+import { MenuEdicionComponent } from './pages/menu/menu-edicion/menu-edicion.component';
 
 export function tokenGetter(){
   let tk = sessionStorage.getItem(environment.TOKEN_NAME);
@@ -63,7 +64,8 @@ export function tokenGetter(){
     TokenComponent,
     MenuComponent,
     RolComponent,
-    RolEdicionComponent
+    RolEdicionComponent,
+    MenuEdicionComponent
   ],
   entryComponents: [MedicoDialogoComponent, DialogoComponentComponent],
   imports: [
