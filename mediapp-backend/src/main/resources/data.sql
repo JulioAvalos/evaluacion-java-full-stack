@@ -17,9 +17,9 @@ create table oauth_refresh_token (
 );
 
 --USUARIOS DE EJEMPLO CON CLAVE 123
-INSERT INTO usuario(id_usuario, nombre, clave, estado) values (1, 'mitocode', '$2a$10$ju20i95JTDkRa7Sua63JWOChSBc0MNFtG/6Sps2ahFFqN.HCCUMW.', '1');
-INSERT INTO usuario(id_usuario, nombre, clave, estado) values (2, 'jaime', '$2a$10$ju20i95JTDkRa7Sua63JWOChSBc0MNFtG/6Sps2ahFFqN.HCCUMW.', '1');
-INSERT INTO usuario(id_usuario, nombre, clave, estado) values (3, 'javalos', '$2a$10$pDBBaL0g/7epijof.0KYy.8sBQPqNEBhgcrRU2/PYMlUXseNdnjwa', '1');
+INSERT INTO usuario(id_usuario, nombre, clave, estado) values (1, 'Mitocode', '$2a$10$ju20i95JTDkRa7Sua63JWOChSBc0MNFtG/6Sps2ahFFqN.HCCUMW.', '1');
+INSERT INTO usuario(id_usuario, nombre, clave, estado) values (2, 'Jaime', '$2a$10$ju20i95JTDkRa7Sua63JWOChSBc0MNFtG/6Sps2ahFFqN.HCCUMW.', '1');
+INSERT INTO usuario(id_usuario, nombre, clave, estado) values (3, 'Javalos', '$2a$10$pDBBaL0g/7epijof.0KYy.8sBQPqNEBhgcrRU2/PYMlUXseNdnjwa', '1');
 INSERT INTO usuario(id_usuario, nombre, clave, estado) values (4, 'Fabiola', '$2a$10$pDBBaL0g/7epijof.0KYy.8sBQPqNEBhgcrRU2/PYMlUXseNdnjwa', '1');
 INSERT INTO usuario(id_usuario, nombre, clave, estado) values (5, 'Soraya', '$2a$10$pDBBaL0g/7epijof.0KYy.8sBQPqNEBhgcrRU2/PYMlUXseNdnjwa', '1');
 INSERT INTO usuario(id_usuario, nombre, clave, estado) values (6, 'Vikram', '$2a$10$pDBBaL0g/7epijof.0KYy.8sBQPqNEBhgcrRU2/PYMlUXseNdnjwa', '1');

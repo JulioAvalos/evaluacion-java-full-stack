@@ -37,6 +37,8 @@ import { RolEdicionComponent } from './pages/rol/rol-edicion/rol-edicion.compone
 import { MenuEdicionComponent } from './pages/menu/menu-edicion/menu-edicion.component';
 import { UsuarioRolComponent } from './pages/asignar/usuario-rol/usuario-rol.component';
 import { UsuarioRolEdicionComponent } from './pages/asignar/usuario-rol/usuario-rol-edicion/usuario-rol-edicion.component';
+import { MenuRolComponent } from './pages/asignar/menu-rol/menu-rol.component';
+import { MenuRolEdicionComponent } from './pages/asignar/menu-rol/menu-rol-edicion/menu-rol-edicion.component';
 
 
 export function tokenGetter() {
@@ -70,7 +72,9 @@ export function tokenGetter() {
     RolEdicionComponent,
     MenuEdicionComponent,
     UsuarioRolComponent,
-    UsuarioRolEdicionComponent
+    UsuarioRolEdicionComponent,
+    MenuRolComponent,
+    MenuRolEdicionComponent
   ],
   entryComponents: [MedicoDialogoComponent, DialogoComponentComponent],
   imports: [

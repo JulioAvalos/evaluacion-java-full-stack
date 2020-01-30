@@ -23,6 +23,8 @@ import { MenuComponent } from './pages/menu/menu.component';
 import { MenuEdicionComponent } from './pages/menu/menu-edicion/menu-edicion.component';
 import { UsuarioRolComponent } from './pages/asignar/usuario-rol/usuario-rol.component';
 import { UsuarioRolEdicionComponent } from './pages/asignar/usuario-rol/usuario-rol-edicion/usuario-rol-edicion.component';
+import { MenuRolComponent } from './pages/asignar/menu-rol/menu-rol.component';
+import { MenuRolEdicionComponent } from './pages/asignar/menu-rol/menu-rol-edicion/menu-rol-edicion.component';
 
 const routes: Routes = [
   {
@@ -70,6 +72,11 @@ const routes: Routes = [
   {
     path: 'usuario-rol', component: UsuarioRolComponent, children: [
       { path: 'edicion/:id', component: UsuarioRolEdicionComponent }
+    ], canActivate: [GuardService]
+  },
+  {
+    path: 'menu-rol', component: MenuRolComponent, children: [
+      { path: 'edicion/:id', component: MenuRolEdicionComponent }
     ], canActivate: [GuardService]
   },
   { path: 'not-403', component: Not403Component },
