@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { RolService } from 'src/app/_service/rol.service';
 import { Rol } from 'src/app/_model/rol';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-rol-edicion',
@@ -24,7 +25,7 @@ export class RolEdicionComponent implements OnInit {
   ngOnInit() {
     this.form = new FormGroup({
       'idRol': new FormControl(0),
-      'nombre': new FormControl('',[Validators.required, Validators.minLength(3)]),
+      'nombre': new FormControl('', [Validators.required, Validators.minLength(3)]),
       'descripcion': new FormControl('')
     });
 
@@ -60,19 +61,19 @@ export class RolEdicionComponent implements OnInit {
     rol = { ...this.form.value };
     if (this.edicion) {
       //servicio de edicion
-      this.rolService.modificar(rol).subscribe(() => {
-        this.rolService.listar().subscribe(data => {
-          this.rolService.rolCambio.next(data);
-          this.rolService.mensajeCambio.next('SE MODIFICO');
-        });
+      this.rolService.modificar(rol).pipe(switchMap(() => {
+        return this.rolService.listar();
+      })).subscribe(data => {
+        this.rolService.rolCambio.next(data);
+        this.rolService.mensajeCambio.next('SE MODIFICO');
       });
     } else {
       //servicio de registro
-      this.rolService.registrar(rol).subscribe(() => {
-        this.rolService.listar().subscribe(data => {
-          this.rolService.rolCambio.next(data);
-          this.rolService.mensajeCambio.next('SE REGISTRO');
-        });
+      this.rolService.registrar(rol).pipe(switchMap(() => {
+        return this.rolService.listar();
+      })).subscribe(data => {
+        this.rolService.rolCambio.next(data);
+        this.rolService.mensajeCambio.next('SE REGISTRO');
       });
     }
     this.router.navigate(['rol']);

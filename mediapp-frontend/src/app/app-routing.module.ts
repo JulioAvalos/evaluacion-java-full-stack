@@ -21,7 +21,8 @@ import { RolComponent } from './pages/rol/rol.component';
 import { RolEdicionComponent } from './pages/rol/rol-edicion/rol-edicion.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { MenuEdicionComponent } from './pages/menu/menu-edicion/menu-edicion.component';
-import { AsignarRolesUsuarioComponent } from './pages/asignar-roles-usuario/asignar-roles-usuario.component';
+import { UsuarioRolComponent } from './pages/asignar/usuario-rol/usuario-rol.component';
+import { UsuarioRolEdicionComponent } from './pages/asignar/usuario-rol/usuario-rol-edicion/usuario-rol-edicion.component';
 
 const routes: Routes = [
   {
@@ -66,7 +67,11 @@ const routes: Routes = [
       { path: 'edicion/:id', component: MenuEdicionComponent }
     ], canActivate: [GuardService]
   },
-  { path: 'asignar-roles-usuario', component: AsignarRolesUsuarioComponent },
+  {
+    path: 'usuario-rol', component: UsuarioRolComponent, children: [
+      { path: 'edicion/:id', component: UsuarioRolEdicionComponent }
+    ], canActivate: [GuardService]
+  },
   { path: 'not-403', component: Not403Component },
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];

@@ -20,6 +20,9 @@ create table oauth_refresh_token (
 INSERT INTO usuario(id_usuario, nombre, clave, estado) values (1, 'mitocode', '$2a$10$ju20i95JTDkRa7Sua63JWOChSBc0MNFtG/6Sps2ahFFqN.HCCUMW.', '1');
 INSERT INTO usuario(id_usuario, nombre, clave, estado) values (2, 'jaime', '$2a$10$ju20i95JTDkRa7Sua63JWOChSBc0MNFtG/6Sps2ahFFqN.HCCUMW.', '1');
 INSERT INTO usuario(id_usuario, nombre, clave, estado) values (3, 'javalos', '$2a$10$pDBBaL0g/7epijof.0KYy.8sBQPqNEBhgcrRU2/PYMlUXseNdnjwa', '1');
+INSERT INTO usuario(id_usuario, nombre, clave, estado) values (4, 'Fabiola', '$2a$10$pDBBaL0g/7epijof.0KYy.8sBQPqNEBhgcrRU2/PYMlUXseNdnjwa', '1');
+INSERT INTO usuario(id_usuario, nombre, clave, estado) values (5, 'Soraya', '$2a$10$pDBBaL0g/7epijof.0KYy.8sBQPqNEBhgcrRU2/PYMlUXseNdnjwa', '1');
+INSERT INTO usuario(id_usuario, nombre, clave, estado) values (6, 'Vikram', '$2a$10$pDBBaL0g/7epijof.0KYy.8sBQPqNEBhgcrRU2/PYMlUXseNdnjwa', '1');
 
 INSERT INTO Rol (id_rol, nombre, descripcion) VALUES (1, 'ADMIN', 'Administrador');
 INSERT INTO Rol (id_rol, nombre, descripcion) VALUES (2, 'USER', 'Usuario');
@@ -72,6 +75,8 @@ INSERT INTO menu(id_menu, nombre, icono, url) VALUES (8, 'Pacientes', 'accessibi
 INSERT INTO menu(id_menu, nombre, icono, url) VALUES (9, 'Reportes', 'assessment', '/reporte');
 INSERT INTO menu(id_menu, nombre, icono, url) VALUES (10, 'Rol', 'vpn_key', '/rol');
 INSERT INTO menu(id_menu, nombre, icono, url) VALUES (11, 'Menu', 'group', '/menu');
+INSERT INTO menu(id_menu, nombre, icono, url) VALUES (12, 'Asignar Roles Usuario', 'assignment_ind', '/usuario-rol');
+INSERT INTO menu(id_menu, nombre, icono, url) VALUES (13, 'Asignar Roles Menu', 'group', '/menu-rol');
 
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (1, 1);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (2, 1);
@@ -84,6 +89,8 @@ INSERT INTO menu_rol (id_menu, id_rol) VALUES (8, 1);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (9, 1);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (10, 1);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (11, 1);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (12, 1);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (13, 1);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (3, 2);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (4, 2);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (5, 2);

@@ -1,0 +1,51 @@
+<mat-card fxLayout="row" fxLayoutAlign="center center">Asignacion de roles a usuario</mat-card>
+
+<form class="example-container" [formGroup]="form" #frmAsignar="ngForm" (ngSubmit)="operar()">
+
+  <div class="container">
+    <div class="flex-container" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="35px">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Usuario" formControlName="username" readonly>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select placeholder="Rol" [(value)]="idRolSeleccionado">
+          <mat-option *ngFor="let r of roles" [value]="r.idRol">{{r.descripcion}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="agregarRol(); $event.preventDefault()">Agregar</button>
+    </div>
+  </div>
+  <div class="container">
+    <div class="flex-container" fxLayout="row" fxLayoutAlign="space-evenly start" fxLayoutGap="35px">
+      <div id="rol-container">
+        <h1 style="font-weight: bold;">Roles Actuales</h1>
+        <mat-list *ngFor="let r of rolesActuales; let i=index">
+          <mat-list-item> {{i + 1}}. {{ r.descripcion }} </mat-list-item>
+          <mat-divider></mat-divider>
+        </mat-list>
+      </div>
+      <div id="new-rol-container">
+        <h1 style=" font-weight: bold;padding-bottom: 15px;">Nuevos Roles</h1>
+        <div style="border: 2px solid black;" *ngIf="nuevosRoles.length > 0">
+          <div style="padding: 15px;" *ngFor="let r of nuevosRoles; let i=index" fxLayout="column" fxLayoutAlign="center stretch">
+            <div>
+              {{ r.descripcion}}
+              <button mat-raised-button color="primary" (click)="removerRol(i); $event.preventDefault()">Remover</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container"  fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="35px">
+      <button mat-raised-button color="primary" type="submit" [disabled]="frmAsignar.invalid">
+        <mat-icon>done</mat-icon>
+        <span>Aceptar</span>
+      </button>
+      <button mat-raised-button color="accent" routerLink='/usuario-rol' type="button">
+        <mat-icon>close</mat-icon>
+        <span>Cancelar</span>
+      </button>
+    </div>
+  </div>
+</form>

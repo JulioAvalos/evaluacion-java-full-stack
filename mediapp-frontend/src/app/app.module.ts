@@ -35,10 +35,11 @@ import { MenuComponent } from './pages/menu/menu.component';
 import { RolComponent } from './pages/rol/rol.component';
 import { RolEdicionComponent } from './pages/rol/rol-edicion/rol-edicion.component';
 import { MenuEdicionComponent } from './pages/menu/menu-edicion/menu-edicion.component';
-import { AsignarRolesUsuarioComponent } from './pages/asignar-roles-usuario/asignar-roles-usuario.component';
-import { AsignarRolesMenuComponent } from './pages/asignar-roles-menu/asignar-roles-menu.component';
+import { UsuarioRolComponent } from './pages/asignar/usuario-rol/usuario-rol.component';
+import { UsuarioRolEdicionComponent } from './pages/asignar/usuario-rol/usuario-rol-edicion/usuario-rol-edicion.component';
 
-export function tokenGetter(){
+
+export function tokenGetter() {
   let tk = sessionStorage.getItem(environment.TOKEN_NAME);
   return tk != null ? tk : '';
 }
@@ -68,8 +69,8 @@ export function tokenGetter(){
     RolComponent,
     RolEdicionComponent,
     MenuEdicionComponent,
-    AsignarRolesUsuarioComponent,
-    AsignarRolesMenuComponent
+    UsuarioRolComponent,
+    UsuarioRolEdicionComponent
   ],
   entryComponents: [MedicoDialogoComponent, DialogoComponentComponent],
   imports: [
@@ -96,7 +97,7 @@ export function tokenGetter(){
       useClass: ServerErrorsInterceptor,
       multi: true,
     },
-    { provide: LocationStrategy, useClass: HashLocationStrategy}
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   bootstrap: [AppComponent]
 })

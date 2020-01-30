@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { MenuService } from 'src/app/_service/menu.service';
 import { Menu } from 'src/app/_model/menu';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-menu-edicion',
@@ -60,20 +61,21 @@ export class MenuEdicionComponent implements OnInit {
     menu = { ...this.form.value };
     if (this.edicion) {
       //servicio de edicion
-      this.menuService.modificar(menu).subscribe(() => {
-        this.menuService.listar().subscribe(data => {
-          this.menuService.menuCambio.next(data);
-          this.menuService.mensajeCambio.next('SE MODIFICO');
-        });
+      this.menuService.modificar(menu).pipe(switchMap(() => {
+        return this.menuService.listar();
+      })).subscribe(data => {
+        this.menuService.menuCambio.next(data);
+        this.menuService.mensajeCambio.next('SE MODIFICO');
       });
     } else {
       //servicio de registro
-      this.menuService.registrar(menu).subscribe(() => {
-        this.menuService.listar().subscribe(data => {
-          this.menuService.menuCambio.next(data);
-          this.menuService.mensajeCambio.next('SE REGISTRO');
-        });
+      this.menuService.registrar(menu).pipe(switchMap(() => {
+        return this.menuService.listar();
+      })).subscribe(data => {
+        this.menuService.menuCambio.next(data);
+        this.menuService.mensajeCambio.next('SE REGISTRO');
       });
+
     }
     this.router.navigate(['menu']);
   }

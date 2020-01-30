@@ -4,11 +4,11 @@ import { MatTableDataSource, MatSort, MatSnackBar } from '@angular/material';
 import { Usuario } from 'src/app/_model/usuario';
 
 @Component({
-  selector: 'app-asignar-roles-usuario',
-  templateUrl: './asignar-roles-usuario.component.html',
-  styleUrls: ['./asignar-roles-usuario.component.css']
+  selector: 'app-usuario-rol',
+  templateUrl: './usuario-rol.component.html',
+  styleUrls: ['./usuario-rol.component.css']
 })
-export class AsignarRolesUsuarioComponent implements OnInit {
+export class UsuarioRolComponent implements OnInit {
 
   cantidad: number = 0;
   dataSource: MatTableDataSource<Usuario>;
