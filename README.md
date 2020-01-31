@@ -7,7 +7,7 @@
 
 ### Consideraciones:
 
-- Se ha modificado el modulo jwt del archivo **app.module.ts** para apuntar al localhost:8080, para aceptar peticiones del backend
+- Se ha modificado el modulo jwt del archivo **app.module.ts** para apuntar al **localhost:8080** y aceptar peticiones del backend
 - Se ha agregado archivo **data.sql**, con el script que se utilizo para desarrollar y hacerle pruebas a la aplicacion
 - Se agrego opcionalmente, un archivo **docker-compose.yml** para levantar base de datos postgres, sin tener que instalarla en equipo donde se desarrollara/revisara la app
 
