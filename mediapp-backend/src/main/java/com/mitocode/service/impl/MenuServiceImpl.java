@@ -30,7 +30,10 @@ public class MenuServiceImpl implements IMenuService {
 	public Menu modificar(Menu menu) {
 		Optional<Menu> op = repo.findById(menu.getIdMenu());
 		Menu menuAnterior = op.orElseGet(Menu::new);
-		menu.setRoles(menuAnterior.getRoles());
+		if(!menu.getNombre().equals(menuAnterior.getNombre()) ||
+				!menu.getIcono().equals(menuAnterior.getIcono()) || !menu.getUrl().equals(menuAnterior.getUrl())){
+			menu.setRoles(menuAnterior.getRoles());
+		}
 		return repo.save(menu);
 	}
 

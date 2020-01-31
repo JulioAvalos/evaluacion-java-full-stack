@@ -84,8 +84,7 @@ export class UsuarioRolEdicionComponent implements OnInit {
       this.mensaje = 'No se han agregado roles!!';
       this.snackBar.open(this.mensaje, "Aviso", { duration: 2000 });
       return;
-    }
-    else {
+    } else {
       let usuario = new Usuario();
       usuario = { ...this.form.value };
       usuario.roles = this.nuevosRoles;
@@ -102,7 +101,7 @@ export class UsuarioRolEdicionComponent implements OnInit {
   }
 
   agregarRol() {
-    let rolNuevo = this.roles.find(r => r.idRol === this.idRolSeleccionado);
+    const rolNuevo = this.roles.find(r => r.idRol === this.idRolSeleccionado);
     if (rolNuevo && !this.nuevosRoles.includes(rolNuevo)) {
       console.log(this.nuevosRoles);
       this.nuevosRoles.push(rolNuevo);
