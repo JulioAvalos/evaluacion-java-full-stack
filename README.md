@@ -1,4 +1,4 @@
-# Media App - (Evaluacion Java Full Stack Developer)
+# Media App - (Evaluacion Tipo B | Java Full Stack Developer)
 
 ### Proyecto incluye lo siguiente:
 
