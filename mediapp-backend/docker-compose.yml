@@ -1,5 +1,6 @@
 version: '3.5'
 
+# archivo opcional para levantar una base postgre en docker y no instalar en equipo
 # docker compose para desplegar servidor db postgres
 services:
   postgres_server:
